@@ -63,9 +63,18 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* |   basic compute gen5 & basic storage  |       $1.45       |
+| *Azure Service Bus*   |      --  |     < $0.01         |
+| *SendGrid for Azure* | Free Tier | $0 |
+| *Azure Storage Account* | bandwidth & tables & tiered block blob | < $0.01 |
+| *Azure Cache for Redis* | Basic tier | $0.22 |
+| *Azure App Service Plan* | Basic Tier | < $0.0.1 |
+| *Azure App Service*                   |      Free Tier   |       $0       |
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+- Scalabilty of the app(front end, backend functions, and database)
+- Decoupling the app makes it easy for different teams to focus on builg their own part of the app without direct dependency on the other team.
+- The architecute also reduces cost and some of the components are cheaper.
+- Migration of the different parts of the app has been made very easy.
+- This architecture is cost effective as we will basically be paying with respect to how the app is used.
+
